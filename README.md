@@ -32,13 +32,13 @@ bputil -nkcasm
 
 # Essential Defaults
 
+Directly under the first command is it's reverse counterpart to undo any changes done.
+
 Faster Dock Hiding:
 
 ```
 defaults write com.apple.dock autohide-delay -float 0 && defaults write com.apple.dock autohide-time-modifier -int 0 && killall Dock
 ```
-
-Faster Dock Hiding Undo:
 
 ```
 defaults write com.apple.dock autohide-delay -float 0.5 && defaults write com.apple.dock autohide-time-modifier -int 0.5 && killall Dock
@@ -50,8 +50,6 @@ Disk Warning Disable:
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool true && sudo pkill diskarbitrationd
 ```
 
-Disk Warning Enable:
-
 ```
 sudo defaults delete /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification && sudo pkill diskarbitrationd
 ```
@@ -61,8 +59,6 @@ Show Hidden Files Always:
 ```
 defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder
 ```
-
-Stock Hidden Files:
 
 ```
 defaults delete com.apple.finder AppleShowAllFiles && killall Finder
@@ -74,8 +70,6 @@ Tahoe Beta 3 White Screenshots Fix:
 defaults write com.apple.screencapture disable-shadow -bool true
 ```
 
-Back to Default:
-
 ```
 defaults delete com.apple.screencapture disable-shadow
 ```
@@ -85,8 +79,6 @@ Notification for Crash Reports:
 ```
 defaults write com.apple.CrashReporter UseUNC 1
 ```
-
-Disable Notification (Stock):
 
 ```
 defaults delete com.apple.CrashReporter UseUNC
@@ -104,7 +96,7 @@ defaults write com.apple.dock springboard-columns -int 10
 killall Dock
 ```
 
-Stock:
+Stock Launchpad Layout:
 
 ```
 defaults delete com.apple.dock springboard-rows && defaults delete com.apple.dock springboard-columns && killall Dock
@@ -116,8 +108,6 @@ Disable Font Smoothing:
 defaults -currentHost write -g AppleFontSmoothing -int 0
 ```
 
-Undo the change: 
-
 ```
 defaults -currentHost delete -g AppleFontSmoothing
 ```
@@ -127,8 +117,6 @@ Enable Metal HUD (does not persist through reboots):
 ```
 launchctl setenv MTL_HUD_ENABLED 1
 ```
-
-Disable Metal HUD: 
 
 ```
 launchctl unsetenv MTL_HUD_ENABLED
