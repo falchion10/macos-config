@@ -170,6 +170,12 @@ kmutil create -a arm64e -z -V development -n boot \
 $(kmutil inspect -V release --no-header | awk '{print " -b "$1; }')
 ```
 
+macOS Boot Logo File:
+
+```
+/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Resources/Assets.car
+```
+
 ## macOS Jailbreak Guide:
 
 https://github.com/falchion10/macOS-Jailbreak
